@@ -21,6 +21,9 @@ And a `*.conf` file in that directory (i.e. `nginx.conf`, but NOT just `.conf`):
 server {
     listen              443 ssl;
     server_name         server.company.com;
+
+    # IMPORTANT: These files must be named */fullchain.pem and *privkey.pem.
+    # Any other names won't work.
     ssl_certificate     /etc/letsencrypt/live/server.company.com/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/server.company.com/privkey.pem;
 
